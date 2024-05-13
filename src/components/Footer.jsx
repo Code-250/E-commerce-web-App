@@ -1,22 +1,87 @@
-import React from "react";
+import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { MacloopsLogo } from '../components/svgs'
 
 const Footer = () => {
+
+  const linkToPage = useNavigate("");
+
+  const footer_links_abt = [
+    {
+      name: 'Legal Information',
+      url: '/legal',
+      border: true
+    },
+    {
+      name: 'Privacy Policy',
+      url: '/privacy',
+      border: true
+    },
+    {
+      name: 'Contact',
+      url: '/contact',
+      border: false
+    }
+  ]
+
+  const social_link = [
+    {
+      social_app: 'ph-bold ph-paper-plane-tilt',
+      url: 'https://www.gmail.com'
+    },
+    {
+      social_app: 'ph-bold ph-instagram-logo',
+      url: 'https://www.instagram.com'
+    },
+    {
+      social_app: 'ph-bold ph-facebook-logo',
+      url: 'https://www.facebook.com'
+    },
+    {
+      social_app: 'ri-twitter-x-line',
+      url: 'https://www.twitter.com'
+    }
+  ]
+
+
   return (
-    <>
-      <footer className="mb-0 text-center">
-        <div className="d-flex align-items-center justify-content-center pb-5">
-          <div className="col-md-6">
-            <p className="mb-3 mb-md-0">Made with ❤️ by {" "}
-              <a  href="https://sahibsingh.dev" className="text-decoration-underline text-dark fs-5" target="_blank" rel="noreferrer">Sahib Singh</a>
-            </p>
-            <a className="text-dark fs-4" href="https://github.com/ssahibsingh" target="_blank" rel="noreferrer">
-              <i className="fa fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-};
+    <div style={{ background: '#222120', color: '#f4e6d8', display: 'flex', padding: '10px 60px', bottom: '0', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div onClick={e => { linkToPage('/') }} className='footer_left_wrap' style={{ fontFamily: 'Montserrat', display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <MacloopsLogo height={24} width={'123px'} color={'#ff9932'} />
+        <div style={{ fontSize: '14px' }}>© 2023. Rights Reserved. </div>
+      </div>
+
+      <ul className='footer_mid_wrap' style={{ display: 'flex', padding: '0', gap: '15px', fontFamily: '', fontSize: '14px' }}>
+        {
+          footer_links_abt.map(link_abt => {
+            return (
+              <li key={link_abt.name} style={{ listStyle: 'none', fontFamily: 'Nunito Sans', color: '#f4e6d8' }}>
+                <NavLink className='' to={link_abt.url} style={{ display: 'flex', gap: '15px' }}>
+                  <div>{link_abt.name}</div>
+                  <div style={{ display: link_abt.border ? 'flex' : 'none' }}>|</div>
+                </NavLink>
+              </li>
+
+            )
+          })
+        }
+      </ul>
+
+      <ul className='footer_mid_wrap' style={{ display: 'flex', padding: '0', gap: '15px' }}>
+        {
+          social_link.map(social => {
+            return (
+              <li key={social.social_app} style={{ listStyle: 'none', fontFamily: 'Nunito Sans', fontSize: '20px' }}>
+                <NavLink to={social.url}>
+                  <i className={social.social_app} />
+                </NavLink>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
+}
 
 export default Footer;
