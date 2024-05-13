@@ -132,7 +132,7 @@ const Product = () => {
               return (
                 <div key={item.id} className="card mx-4 text-center">
                   <img
-                    className="card-img-top p-3"
+                    className="card-img-top p-3 object-fit-contain"
                     src={item.image}
                     alt="Card"
                     height={300}
@@ -175,7 +175,7 @@ const Product = () => {
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-          <h2 className="">You may also Like</h2>
+            <h2 className="">You may also Like</h2>
             <Marquee
               pauseOnHover={true}
               pauseOnClick={true}
