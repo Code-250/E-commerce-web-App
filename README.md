@@ -5,7 +5,7 @@ Framework.
 
 ## Demo
 
-https://reactjs-ecommerce-app.vercel.app/
+https://shema-ecommerce.vercel.app/
 
 ## Features
 
