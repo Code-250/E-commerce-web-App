@@ -24,7 +24,7 @@ const Navbar = () => {
                             <NavLink className="nav-link" to="/about">About</NavLink>
                         </li> */}
                         <li className="nav-item px-md-5">
-                            <NavLink className="nav-link text-white" to="/contact">My Orders</NavLink>
+                            <NavLink className="nav-link text-white" to="/orders">My Orders</NavLink>
                         </li>
                     </ul>
                     <div className="buttons text-center ">

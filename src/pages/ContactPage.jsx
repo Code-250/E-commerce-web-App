@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import { Link } from "react-router-dom";
 
-const ContactPage = () => {
+const OrdersPage = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
@@ -112,4 +112,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default OrdersPage;
