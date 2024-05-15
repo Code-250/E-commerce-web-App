@@ -154,7 +154,7 @@ const Checkout = () => {
                         <br />
                         <select className="form-select" id="country" required>
                           <option value="">Choose...</option>
-                          <option>India</option>
+                          <option>Rwanda</option>
                         </select>
                         <div className="invalid-feedback">
                           Please select a valid country.
@@ -168,7 +168,7 @@ const Checkout = () => {
                         <br />
                         <select className="form-select" id="state" required>
                           <option value="">Choose...</option>
-                          <option>Punjab</option>
+                          <option>Kigali</option>
                         </select>
                         <div className="invalid-feedback">
                           Please provide a valid state.
@@ -192,11 +192,11 @@ const Checkout = () => {
                       </div>
                     </div>
 
-                    <hr className="my-4" />
+                    {/* <hr className="my-4" /> */}
 
-                    <h4 className="mb-3">Payment</h4>
+                    {/* <h4 className="mb-3">Payment</h4> */}
 
-                    <div className="row gy-3">
+                    {/* <div className="row gy-3">
                       <div className="col-md-6">
                         <label for="cc-name" className="form-label">
                           Name on card
@@ -263,7 +263,7 @@ const Checkout = () => {
                           Security code required
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <hr className="my-4" />
 
@@ -271,7 +271,7 @@ const Checkout = () => {
                       className="w-100 btn btn-primary "
                       type="submit" disabled
                     >
-                      Continue to checkout
+                      Create Order
                     </button>
                   </form>
                 </div>

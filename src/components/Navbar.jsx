@@ -28,7 +28,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="buttons text-center ">
-                        <NavLink to="/login" className="btn btn-outline-dark bg-white m-2">Login</NavLink>
+                        <NavLink to="/login" className="btn btn-outline-dark bg-white text-black m-2">Login</NavLink>
                         <NavLink to="/register" className="btn btn-outline-dark m-2 text-white border-white"> Register</NavLink>
                         <NavLink to="/cart" className="btn text-white m-2"><i className="fa fa-cart-shopping text-white mr-1"></i> ({state.length}) </NavLink>
                     </div>

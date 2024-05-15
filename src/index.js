@@ -5,6 +5,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import PrivateRoutes from "./helper/privateRoute";
+import PublicRoutes from "./helper/publicRoutes"
 
 
 import { Home, Product, Products, AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
@@ -14,17 +16,21 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Products />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="*" element={<PageNotFound />} />
-        <Route path="/product/*" element={<PageNotFound />} />
+        <Route element={<PublicRoutes />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Route>
+        <Route element={<PrivateRoutes />}>
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/product/*" element={<PageNotFound />} />
+        </Route>
+
       </Routes>
     </Provider>
   </BrowserRouter>

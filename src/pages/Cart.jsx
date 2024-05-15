@@ -149,7 +149,7 @@ const Cart = () => {
                       to="/checkout"
                       className="btn btn-dark btn-lg btn-block"
                     >
-                      Go to checkout
+                      Create Order
                     </Link>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const Cart = () => {
         <hr />
         {state.length > 0 ? <ShowCart /> : <EmptyCart />}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -76,14 +76,14 @@ const Product = () => {
               />
             </div>
             <div className="col-md-6 col-md-6 py-5">
-              <h4 className="text-uppercase text-muted">{product.category}</h4>
-              <h1 className="display-5">{product.title}</h1>
+              <h4 className="text-uppercase text-muted opacity-50">{product.category}</h4>
+              <h1 className="display-5 lh-1" style={{ color: "#9E3500", fontWeight: 600 }}>{product.title}</h1>
               <p className="lead">
                 {product.rating && product.rating.rate}{" "}
                 <i className="fa fa-star"></i>
               </p>
-              <h3 className="display-6  my-4">${product.price}</h3>
-              <p className="lead">{product.description}</p>
+              <h3 className="display-6  my-4" style={{ fontWeight: 500 }}>${product.price}</h3>
+              <p className="lead fs-12 opacity-50">{product.description}</p>
               <button
                 className="btn btn-outline-dark"
                 onClick={() => addProduct(product)}
@@ -126,35 +126,39 @@ const Product = () => {
   const ShowSimilarProduct = () => {
     return (
       <>
-        <div className="py-4 my-4">
+        <div className="py-4 my-4 mw-50">
           <div className="d-flex">
             {similarProducts.map((item) => {
               return (
-                <div key={item.id} className="card mx-4 text-center">
-                  <img
-                    className="card-img-top p-3 object-fit-contain"
-                    src={item.image}
-                    alt="Card"
-                    height={300}
-                    width={300}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      {item.title.substring(0, 15)}...
-                    </h5>
-                  </div>
+                <div key={item.id} className="card mx-3 text-center shadow-sm border-none" style={{ border: "none" }}>
+                  <Link to={"/product/" + product.id} className="link-offset-2 link-underline link-underline-opacity-0">
+
+
+                    <img
+                      className="card-img-top p-3 object-fit-contain"
+                      src={item.image}
+                      alt="Card"
+                      height={250}
+                      width={300}
+                    />
+                    <div className="card-body text-start">
+                      <h5 className="card-title" style={{ color: "#9E3500" }}>
+                        {item.title}
+                      </h5>
+                    </div>
+                  </Link>
                   {/* <ul className="list-group list-group-flush">
                     <li className="list-group-item lead">${product.price}</li>
                   </ul> */}
                   <div className="card-body">
-                    <Link
+                    {/* <Link
                       to={"/product/" + item.id}
                       className="btn btn-dark m-1"
                     >
                       Buy Now
-                    </Link>
+                    </Link> */}
                     <button
-                      className="btn btn-dark m-1"
+                      className="btn btn-dark m-1 w-100"
                       onClick={() => addProduct(item)}
                     >
                       Add to Cart
@@ -175,7 +179,7 @@ const Product = () => {
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-            <h2 className="">You may also Like</h2>
+            <h2 className="" style={{ fontWeight: 600 }}>You may also Like</h2>
             <Marquee
               pauseOnHover={true}
               pauseOnClick={true}
@@ -186,7 +190,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
